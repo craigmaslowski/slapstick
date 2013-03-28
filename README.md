@@ -1,4 +1,4 @@
-slapstick
+Slapstick
 =========
 
-Code for FairwayTech.com's Backbone Tutorial Series
+Two developers. One Backbone tutorial.
