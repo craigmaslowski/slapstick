@@ -9,7 +9,28 @@
 //
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
-//
-//= require jquery
-//= require jquery_ujs
 //= require_tree .
+//
+// Library files
+//
+= require jquery
+= require postal
+= require lodash
+= require backbone
+= require backbone.puree
+= require backbone.validation
+= require backbone.stickit
+= require module
+//
+// App Files
+//
+// Mixins
+= require mixins/destroyable.viewfile
+= require mixins/postal.subscriber
+= require mixins/validating.view
+// General
+= require app
+= require commands
+= require events
+// Models & Collections
+// Views
