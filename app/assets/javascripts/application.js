@@ -25,7 +25,7 @@
 // App Files
 //
 // Mixins
-= require mixins/destroyable.viewfile
+= require mixins/destroyable.view
 = require mixins/postal.subscriber
 = require mixins/validating.view
 // General

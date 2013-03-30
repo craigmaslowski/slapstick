@@ -25,6 +25,6 @@
 	 
 			if ($field.length) $field.addClass('validation-error');
 			if ($error.length) $error.html(error).show();
-		},
+		}
 	};
 })(module('Mixins'));

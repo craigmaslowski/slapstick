@@ -1,5 +1,5 @@
 (function(Mixins) {
-	Mixins.Subscriber = {
+	Mixins.PostalSubscriber = {
 	  	bindSubscriptions: function () {
 			var self = this;
 			self._subscriptions = [];
