@@ -1,4 +1,18 @@
 Slapstick::Application.routes.draw do
+  get "players/new"
+
+  get "players/create"
+
+  get "players/update"
+
+  get "players/edit"
+
+  get "players/destroy"
+
+  get "players/index"
+
+  get "players/show"
+
   resources :home
   
   # The priority is based upon order of creation:
