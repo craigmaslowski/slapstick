@@ -7,10 +7,17 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Position.create([
-  { :name => 'Right Wing' },
-  { :name => 'Left Wing' },
-  { :name => 'Center' },
-  { :name => 'Right Defender' },
-  { :name => 'Left Defender' },
-  { :name => 'Goaltender' }
+  { :name => 'RW' },
+  { :name => 'LW' },
+  { :name => 'C' },
+  { :name => 'RD' },
+  { :name => 'LD' },
+  { :name => 'G' }
+])
+
+Player.create([
+  { :name => 'Darth Vader', position => 'G', number => 2 },
+  { :name => 'Obi Wan Kenobe', position => 'RW', number => 1 },
+  { :name => 'Luke Skywalker', position => 'C', number => 4 },
+  { :name => 'Chewbacca', position => 'RD', number => 4 },
 ])
