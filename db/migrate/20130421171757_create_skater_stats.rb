@@ -1,7 +1,7 @@
 class CreateSkaterStats < ActiveRecord::Migration
   def change
     create_table :skater_stats do |t|
-      t.integer :number_of_games
+      t.integer :games_played
       t.integer :goals
       t.integer :assists
       t.integer :plus_minus

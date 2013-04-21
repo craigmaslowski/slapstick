@@ -7,9 +7,11 @@ class CreateGoaltenderStats < ActiveRecord::Migration
     	t.integer :goals_against
     	t.integer :shots_against
     	t.integer :saves
+      t.integer :save_percentage
     	t.integer :goals_against_average
     	t.integer :shutouts
       t.references :player
+
       t.timestamps
     end
 
