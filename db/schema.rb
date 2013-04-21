@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(:version => 20130421171757) do
     t.integer  "goals_against"
     t.integer  "shots_against"
     t.integer  "saves"
+    t.integer  "save_percentage"
     t.integer  "goals_against_average"
     t.integer  "shutouts"
+    t.integer  "player_id"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
   end
@@ -44,7 +46,7 @@ ActiveRecord::Schema.define(:version => 20130421171757) do
   end
 
   create_table "skater_stats", :force => true do |t|
-    t.integer  "number_of_games"
+    t.integer  "games_played"
     t.integer  "goals"
     t.integer  "assists"
     t.integer  "plus_minus"
