@@ -1,5 +1,5 @@
 <h1>Players</h1>
-<form class="player">
+<form class="skater">
 	<input type="text" class="name" />
 	<input type="text" class="number" />
 	<input type="text" class="games_played" />
@@ -7,13 +7,9 @@
 		<option>C</option>
 		<option>LW</option>
 		<option>RW</option>
-		<option>G</option>
 		<option>RD</option>
 		<option>LD</option>
 	</select>
-</form>
-
-<form class="skater">
 	<input type="text" class="goals" />
 	<input type="text" class="assists" />
 	<input type="text" class="plus_minus" />
@@ -22,7 +18,42 @@
 	<input type="text" class="penalty_minutes" />
 </form>
 
+<table>
+	<thead>
+	  <tr>
+	    <th>Name</th>
+	    <th>#</th>
+	    <th>Pos</th>
+	    <th>GP</th>
+	    <th>G</th>
+	    <th>A</th>
+	    <th>Hits</th>
+	    <th>SOG</th>
+	    <th>PIM</th>
+	  </tr>
+	 </thead>
+	<tbody>	 
+	<% @skaters.each do |skater| %>
+	  <tr>
+	    <td><%= skater.name %></td>
+	    <td><%= skater.number %></td>
+	    <td><%= skater.position %></td>
+	    <td><%= skater.number_of_games %></td>
+	    <td><%= skater.goals %></td>
+	    <td><%= skater.assists %></td>
+	    <td><%= skater.plus_minus %></td>
+	    <td><%= skater.hits %></td>
+	    <td><%= skater.shots_on_goal %></td>
+	    <td><%= skater.penalty_minutes %></td>
+	  </tr>
+	<% end %>
+	</tbody>
+</table>
+
 <form class="goaltender">
+	<input type="text" class="name" />
+	<input type="text" class="number" />
+	<input type="text" class="games_played" />
 	<input type="text" class="wins" />
 	<input type="text" class="losses" />
 	<input type="text" class="plus_minus" />
@@ -32,47 +63,21 @@
 </form>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>#</th>
-    <th>Pos</th>
-    <th>GP</th>
-    <th>G</th>
-    <th>A</th>
-    <th>Hits</th>
-    <th>SOG</th>
-    <th>PIM</th>
-  </tr>
- 
-<% @skaters.each do |skater| %>
-  <tr>
-    <td><%= skater.name %></td>
-    <td><%= skater.number %></td>
-    <td><%= skater.position %></td>
-    <td><%= skater.number_of_games %></td>
-    <td><%= skater.goals %></td>
-    <td><%= skater.assists %></td>
-    <td><%= skater.plus_minus %></td>
-    <td><%= skater.hits %></td>
-    <td><%= skater.shots_on_goal %></td>
-    <td><%= skater.penalty_minutes %></td>
-  </tr>
-<% end %>
-</table>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>#</th>
-    <th>GP</th>
-    <th>W</th>
-    <th>L</th>
-    <th>SA</th>
-    <th>S%</th>
-    <th>GA</th>
-    <th>GAA</th>
-    <th>SO</th>
-  </tr>
+	<thead>
+	  <tr>
+	    <th>Name</th>
+	    <th>#</th>
+	    <th>GP</th>
+	    <th>W</th>
+	    <th>L</th>
+	    <th>SA</th>
+	    <th>S%</th>
+	    <th>GA</th>
+	    <th>GAA</th>
+	    <th>SO</th>
+	  </tr>
+	</thead>
+<tbody>
 <% @goaltenders.each do |goaltender| %>
   <tr>
     <td><%= goaltender.name %></td>
@@ -87,4 +92,5 @@
     <td><%= goaltender.shutouts %></td>
   </tr>
 <% end %>
+</tbody>
 </table>

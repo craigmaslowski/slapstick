@@ -9,10 +9,7 @@
 		},
 
 		render: function () {
-			var self = this;
-			self.collection.each(function () {
-				self.el.append(self.template(self.model));
-			});
+			this.el.append(this.template(this.model.attributes));
 		}
 	});
 })(module('Player.Views'));

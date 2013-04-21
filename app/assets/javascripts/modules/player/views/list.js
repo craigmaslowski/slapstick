@@ -7,9 +7,11 @@
 		},
 
 		addPlayer: function (model) {
-			this.view.push(new Views.ListItem({
+			var view = new Views.ListItem({
 				model: model
-			}));
+			});
+			this.$el.append(view.el);
+			this.views.push(view);
 		}
 	});
 })(module('Player.Views'));
