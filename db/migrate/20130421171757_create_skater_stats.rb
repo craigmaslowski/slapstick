@@ -1,6 +1,6 @@
-class CreateSkaterstats < ActiveRecord::Migration
+class CreateSkaterStats < ActiveRecord::Migration
   def change
-    create_table :skaterstats do |t|
+    create_table :skater_stats do |t|
       t.integer :number_of_games
       t.integer :goals
       t.integer :assists
@@ -12,5 +12,7 @@ class CreateSkaterstats < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :skater_stats, :player_id, { :name => "ix_skater_stats_players" }
   end
 end

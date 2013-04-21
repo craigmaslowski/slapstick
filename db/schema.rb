@@ -11,22 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130421154845) do
+ActiveRecord::Schema.define(:version => 20130421171757) do
+
+  create_table "goaltender_stats", :force => true do |t|
+    t.integer  "games_played"
+    t.integer  "wins"
+    t.integer  "losses"
+    t.integer  "goals_against"
+    t.integer  "shots_against"
+    t.integer  "saves"
+    t.integer  "goals_against_average"
+    t.integer  "shutouts"
+    t.integer  "player_id"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
 
   create_table "players", :force => true do |t|
     t.string   "name"
     t.integer  "position_id"
     t.integer  "number"
     t.string   "image_url"
-    t.integer  "number_of_games"
-    t.integer  "goals"
-    t.integer  "assists"
-    t.integer  "plus_minus"
-    t.integer  "hits"
-    t.integer  "shots_on_goal"
-    t.integer  "penalty_minutes"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   add_index "players", ["position_id"], :name => "index_players_on_position_id"
@@ -36,6 +43,21 @@ ActiveRecord::Schema.define(:version => 20130421154845) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "skater_stats", :force => true do |t|
+    t.integer  "number_of_games"
+    t.integer  "goals"
+    t.integer  "assists"
+    t.integer  "plus_minus"
+    t.integer  "hits"
+    t.integer  "shots_on_goal"
+    t.integer  "penalty_minutes"
+    t.integer  "player_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "skater_stats", ["player_id"], :name => "ix_skater_stats_players"
 
   create_table "team_players", :force => true do |t|
     t.integer  "team_id"
