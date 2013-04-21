@@ -2,12 +2,6 @@
 	// any app initialization tasks we need to do on every page load occur here.
 	// app.start() is called in our server side layout.
 	App.start = function () {
-		// change lodash's template delimiters to {{interpolated}} & [[evaluated]]
-		_.templateSettings = {
-			interpolate: /\{\{(.+?)\}\}/g,
-			evaluate: /\[\[(.+?)\]\]/g
-		};
-
 		// merge global mixins to native backbone types
 		Backbone.puree({
 			all: [

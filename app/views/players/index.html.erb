@@ -1,4 +1,36 @@
 <h1>Players</h1>
+<form class="player">
+	<input type="text" class="name" />
+	<input type="text" class="number" />
+	<input type="text" class="games_played" />
+	<select class="position">
+		<option>C</option>
+		<option>LW</option>
+		<option>RW</option>
+		<option>G</option>
+		<option>RD</option>
+		<option>LD</option>
+	</select>
+</form>
+
+<form class="skater">
+	<input type="text" class="goals" />
+	<input type="text" class="assists" />
+	<input type="text" class="plus_minus" />
+	<input type="text" class="hits" />
+	<input type="text" class="shots_on_goal" />
+	<input type="text" class="penalty_minutes" />
+</form>
+
+<form class="goaltender">
+	<input type="text" class="wins" />
+	<input type="text" class="losses" />
+	<input type="text" class="plus_minus" />
+	<input type="text" class="hits" />
+	<input type="text" class="shots_against" />
+	<input type="text" class="goals_against" />
+</form>
+
 <table>
   <tr>
     <th>Name</th>
@@ -24,9 +56,6 @@
     <td><%= skater.hits %></td>
     <td><%= skater.shots_on_goal %></td>
     <td><%= skater.penalty_minutes %></td>
-    <td><%= link_to 'Show', skater %></td>
-    <td><%= link_to 'Edit', edit_goaltender_path(skater) %></td>
-    <td><%= link_to 'Remove', skater, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
@@ -49,16 +78,13 @@
     <td><%= goaltender.name %></td>
     <td><%= goaltender.number %></td>
     <td><%= goaltender.games_played %></td>
-    <td><%= goaltender.win %></td>
+    <td><%= goaltender.wins %></td>
     <td><%= goaltender.losses %></td>
     <td><%= goaltender.shots_against %></td>
     <td><%= goaltender.save_percentage %></td>
     <td><%= goaltender.goals_against %></td>
     <td><%= goaltender.goals_against_average %></td>
     <td><%= goaltender.shutouts %></td>
-    <td><%= link_to 'Show', goaltender %></td>
-    <td><%= link_to 'Edit', edit_player_path(goaltender) %></td>
-    <td><%= link_to 'Remove', goaltender, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
