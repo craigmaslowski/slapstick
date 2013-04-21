@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(:version => 20130421171757) do
     t.integer  "saves"
     t.integer  "goals_against_average"
     t.integer  "shutouts"
-    t.integer  "player_id"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
   end
