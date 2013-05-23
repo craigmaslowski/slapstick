@@ -14,10 +14,3 @@ Position.create([
   { :name => 'LD' },
   { :name => 'G' }
 ])
-
-Player.create([
-  { :name => 'Darth Vader', :position => 'G', :number => 2 },
-  { :name => 'Obi Wan Kenobe', :position => 'RW', :number => 1 },
-  { :name => 'Luke Skywalker', :position => 'C', :number => 4 },
-  { :name => 'Chewbacca', :position => 'RD', :number => 4 },
-])

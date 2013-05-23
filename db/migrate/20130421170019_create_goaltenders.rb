@@ -1,7 +1,6 @@
-class CreateGoaltenderStats < ActiveRecord::Migration
+class CreateGoaltenders < ActiveRecord::Migration
   def change
-    create_table :goaltender_stats do |t|
-    	t.integer :games_played
+    create_table :goaltenders do |t|
     	t.integer :wins
     	t.integer :losses
     	t.integer :goals_against
@@ -10,11 +9,8 @@ class CreateGoaltenderStats < ActiveRecord::Migration
       t.integer :save_percentage
     	t.integer :goals_against_average
     	t.integer :shutouts
-      t.references :player
 
       t.timestamps
     end
-
-    #add_index :goaltender_stats, :player_id, { :name => "ix_goaltender_stats_players" }
   end
 end

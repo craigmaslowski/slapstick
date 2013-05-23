@@ -1,5 +1,5 @@
 Slapstick::Application.routes.draw do
-  resources :home, :players
+  resources :home, :PlayerController
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

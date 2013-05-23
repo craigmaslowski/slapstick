@@ -13,8 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20130421171757) do
 
-  create_table "goaltender_stats", :force => true do |t|
-    t.integer  "games_played"
+  create_table "goaltenders", :force => true do |t|
     t.integer  "wins"
     t.integer  "losses"
     t.integer  "goals_against"
@@ -23,7 +22,6 @@ ActiveRecord::Schema.define(:version => 20130421171757) do
     t.integer  "save_percentage"
     t.integer  "goals_against_average"
     t.integer  "shutouts"
-    t.integer  "player_id"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
   end
@@ -31,13 +29,17 @@ ActiveRecord::Schema.define(:version => 20130421171757) do
   create_table "players", :force => true do |t|
     t.string   "name"
     t.integer  "position_id"
+    t.integer  "games_played"
     t.integer  "number"
     t.string   "image_url"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "team_member_id"
+    t.string   "team_member_type"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   add_index "players", ["position_id"], :name => "index_players_on_position_id"
+  add_index "players", ["team_member_id", "team_member_type"], :name => "ix_players_team_member_id_and_type"
 
   create_table "positions", :force => true do |t|
     t.string   "name"
@@ -45,20 +47,16 @@ ActiveRecord::Schema.define(:version => 20130421171757) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "skater_stats", :force => true do |t|
-    t.integer  "games_played"
+  create_table "skaters", :force => true do |t|
     t.integer  "goals"
     t.integer  "assists"
     t.integer  "plus_minus"
     t.integer  "hits"
     t.integer  "shots_on_goal"
     t.integer  "penalty_minutes"
-    t.integer  "player_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
-
-  add_index "skater_stats", ["player_id"], :name => "ix_skater_stats_players"
 
   create_table "team_players", :force => true do |t|
     t.integer  "team_id"

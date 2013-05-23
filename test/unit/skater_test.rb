@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class GoaltenderStatsTest < ActiveSupport::TestCase
+class SkaterTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
