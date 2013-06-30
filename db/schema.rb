@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20130421171757) do
     t.string   "image_url"
     t.integer  "team_member_id"
     t.string   "team_member_type"
+    t.integer  "team_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
@@ -57,16 +58,6 @@ ActiveRecord::Schema.define(:version => 20130421171757) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
-
-  create_table "team_players", :force => true do |t|
-    t.integer  "team_id"
-    t.integer  "player_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "team_players", ["player_id"], :name => "index_team_players_on_player_id"
-  add_index "team_players", ["team_id"], :name => "index_team_players_on_team_id"
 
   create_table "teams", :force => true do |t|
     t.string   "name"

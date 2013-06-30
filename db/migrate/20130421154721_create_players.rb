@@ -9,6 +9,7 @@ class CreatePlayers < ActiveRecord::Migration
       t.integer :team_member_id
       t.string :team_member_type
 
+      t.references :team
       t.timestamps
     end
 
