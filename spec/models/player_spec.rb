@@ -7,7 +7,7 @@ describe Player do
 
   describe "attributes" do
     before(:each) do
-      @player = FactoryGirl.create(:player)
+      @player = FactoryGirl.build(:player)
     end
 
     it "should respond to :name" do

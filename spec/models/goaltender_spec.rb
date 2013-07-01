@@ -7,7 +7,7 @@ describe Goaltender do
 
   describe "player attributes" do
     before(:each) do
-      @goaltender = FactoryGirl.create(:goaltender)
+      @goaltender = FactoryGirl.build(:goaltender)
     end
 
     it "should respond to :name" do
@@ -37,7 +37,7 @@ describe Goaltender do
 
   describe "goaltender attributes" do
     before(:each) do
-      @goaltender = FactoryGirl.create(:goaltender)
+      @goaltender = FactoryGirl.build(:goaltender)
     end
 
     it "should respond to :wins" do
@@ -70,6 +70,34 @@ describe Goaltender do
 
     it "should respond to :shutouts" do
       @goaltender.should respond_to(:shutouts)
+    end
+
+    it "should respond to :player" do
+      @goaltender.should respond_to(:player)
+    end
+  end
+
+  describe "instance methods" do
+    it "should save to the goaltenders and players table" do
+      @goaltender = FactoryGirl.create(:goaltender)
+
+      Goaltender.find_by_id(@goaltender.id).should_not be_nil
+      Player.find_by_team_member_id(@goaltender.id).should_not be_nil
+    end
+
+    it "should save to the players table with team_member_type 'Goaltender'" do
+      @goaltender = FactoryGirl.create(:goaltender)
+
+      Player.find_by_team_member_id(@goaltender.id).team_member_type.should == "Goaltender"
+    end
+
+    it "should also retrieve the Goaltender's associated Player record when fetched from the database" do
+      @goaltender = FactoryGirl.create(:goaltender)
+
+      g = Goaltender.find_by_id(@goaltender.id)
+      g.player.should_not be_nil
+      g.player.id.should_not == 0
+      g.player.team_member_id.should == g.id
     end
   end
 end

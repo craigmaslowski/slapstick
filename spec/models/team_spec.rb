@@ -7,12 +7,12 @@ describe Team do
 
   describe "attributes" do
     it "responds to :players" do
-      t = FactoryGirl.create(:team)
+      t = FactoryGirl.build(:team)
       t.should respond_to(:players)
     end
 
     it "responds to :name" do
-      t = FactoryGirl.create(:team)
+      t = FactoryGirl.build(:team)
       t.should respond_to(:name)
     end
   end
